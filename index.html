@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--
+=====================================================================================
+  ASTRA ROKET TAKIMI — index.html
+  =====================================================================================
+  DOSYA YAPISI
+     index.html           -> bu dosya (içerik)
+     css/style.css        -> tüm stiller (renkler en üstte :root içinde)
+     js/main.js           -> menü ve açılır menü davranışları
+     images/              -> logo ve paylaşım görseli
+     favicon.png          -> sekme ikonu
+     robots.txt / sitemap.xml / site.webmanifest
+
+  !!! YAYINA ALMADAN ÖNCE YAPILACAK TEK ŞEY !!!
+  Aşağıda 4 yerde geçen  https://ALAN-ADINIZ.com  yazısını gerçek alan adınızla
+  değiştirin (canonical + og:url + og:image + twitter:image).
+  Aynı değişikliği sitemap.xml ve robots.txt içinde de yapın.
+
+  BÖLÜM HARİTASI (CTRL+F ile arayın)
+     BÖLÜM 1  -> ÜST ÇUBUK / NAVBAR (roket ikonu burada)
+     BÖLÜM 2  -> KAPAK / HERO (logo + ana başlık + giriş metni)
+     BÖLÜM 3  -> BİZ KİMİZ / HAKKIMIZDA
+     BÖLÜM 4  -> GEÇMİŞİMİZ / BAŞARILAR
+     BÖLÜM 5  -> ROKETİMİZ (Mekanik / Elektronik / Faydalı Yük)
+     BÖLÜM 6  -> MODEL ROKETÇİLİK NEDİR?
+     BÖLÜM 7  -> VİDEO ALANI
+     BÖLÜM 8  -> SPONSORLUK (içerik boş, siz dolduracaksınız)
+     BÖLÜM 9  -> İLETİŞİM
+     BÖLÜM 10 -> ALT BİLGİ / FOOTER
+=====================================================================================
+-->
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0a0a0a">
+
+<!-- ===== TEMEL SEO ===== -->
+<title>Astra Roket Takımı | Gaziantep</title>
+<meta name="description" content="2021 yılında Teknogaraj bünyesinde kurulan Astra Roket Takımı, 2027 TEKNOFEST A2 Orta İrtifa kategorisine hazırlanıyor.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Astra Roket Takımı">
+
+<!-- DEĞİŞTİRİN: alan adınız belli olunca aşağıdaki adresi güncelleyin -->
+<link rel="canonical" href="https://ALAN-ADINIZ.com/">
+
+<!-- ===== SOSYAL MEDYA PAYLAŞIM KARTI (Open Graph) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Astra Roket Takımı">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="Astra Roket Takımı">
+<meta property="og:description" content="2021 yılında Teknogaraj bünyesinde kurulan Astra Roket Takımı, 2027 TEKNOFEST A2 Orta İrtifa kategorisine hazırlanıyor.">
+<meta property="og:url" content="https://ALAN-ADINIZ.com/">
+<meta property="og:image" content="https://ALAN-ADINIZ.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Astra Roket Takımı logosu ve takım adı">
+
+<!-- ===== TWITTER / X KARTI ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Astra Roket Takımı">
+<meta name="twitter:description" content="2021 yılında Teknogaraj bünyesinde kurulan Astra Roket Takımı, 2027 TEKNOFEST A2 Orta İrtifa kategorisine hazırlanıyor.">
+<meta name="twitter:image" content="https://ALAN-ADINIZ.com/images/og-image.jpg">
+
+<!-- ===== İKONLAR VE MANİFEST ===== -->
+<link rel="icon" type="image/svg+xml" href="./favicon.svg?v=5">
+
+<link rel="apple-touch-icon" href="images/logo.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- ===== STİL DOSYASI ===== -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- ===== YAPILANDIRILMIŞ VERİ (JSON-LD) =====
+     Sadece sitede zaten yazan, doğrulanabilir bilgiler kullanıldı. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "Astra Roket Takımı",
+  "url": "https://ALAN-ADINIZ.com/",
+  "logo": "https://ALAN-ADINIZ.com/images/logo.png",
+    "foundingDate": "2021",
+  "areaServed": "Gaziantep, Türkiye",
+  "description": "2021 yılında Teknogaraj bünyesinde kurulan, lise ve üniversite öğrencilerinden oluşan roket takımı.",
+  "sameAs": [
+    "https://www.instagram.com/astra_roket/",
+    "https://www.linkedin.com/company/astra-roket/home/"
+  ]
+}
+</script>
+
+<!-- JS: defer ile yüklenir, sayfa çizimini bloklamaz -->
+<script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+<!-- Klavye kullanıcıları için: TAB'a basınca çıkar -->
+<a class="atla" href="#icerik">İçeriğe geç</a>
+
+
+<!-- =====================================================================
+     BÖLÜM 1 — ÜST ÇUBUK / NAVBAR
+     ---------------------------------------------------------------------
+     * Soldaki roket ikonu aşağıdaki <svg> kodudur.
+     * Menüye yeni madde eklemek için <li><a href="#hedef">İsim</a></li>
+       satırını kopyalayıp yapıştırın.
+     ===================================================================== -->
+<header class="ustcubuk">
+  <div class="ustcubuk-ic">
+
+    <!-- SOL: ROKET İKONU + TAKIM ADI -->
+    <a class="marka" href="#kapak">
+      <img class="marka-logo" src="images/logo.png" alt="">
+      <span class="marka-yazi">ASTRA<span>Roket Takımı</span></span>
+    </a>
+
+    <!-- MOBİL MENÜ BUTONU -->
+    <button class="hamburger" id="hamburger" type="button"
+            aria-label="Menüyü aç veya kapat" aria-expanded="false" aria-controls="ana-menu">
+      <span class="ikon-ac" aria-hidden="true">☰</span>
+      <span class="ikon-kapat" aria-hidden="true">✕</span>
+    </button>
+
+    <!-- MENÜ -->
+    <nav aria-label="Ana menü">
+      <ul class="menu" id="ana-menu">
+        <li><a href="#hakkimizda">Biz Kimiz</a></li>
+        <li><a href="#gecmis">Geçmişimiz</a></li>
+
+        <!-- ROKETİMİZ: açılır alt menü -->
+        <li>
+          <button class="acilir-buton" type="button" aria-expanded="false" aria-controls="menu-roket" aria-haspopup="true">
+            Roketimiz <span aria-hidden="true">▾</span>
+          </button>
+          <div class="acilir" id="menu-roket">
+            <a href="#mekanik">Mekanik</a>
+            <a href="#elektronik">Elektronik / Aviyonik</a>
+            <a href="#faydali-yuk">Faydalı Yük &amp; Görev</a>
+          </div>
+        </li>
+
+        <li><a href="#roketcilik">Model Roketçilik</a></li>
+        <li><a href="#sponsorluk">Sponsorluk</a></li>
+
+        <!-- İLETİŞİM: açılır alt menü -->
+        <li>
+          <button class="acilir-buton" type="button" aria-expanded="false" aria-controls="menu-iletisim" aria-haspopup="true">
+            İletişim <span aria-hidden="true">▾</span>
+          </button>
+          <div class="acilir acilir--sag" id="menu-iletisim">
+            <p class="bilgi"><b>Eyüp Arda Soytürk</b>Takım Kaptanı</p>
+            <a href="tel:+905524897978">0552 489 79 78</a>
+            <p class="bilgi"><b>Gülşen Alsaç</b>İletişim Sorumlusu</p>
+            <a href="tel:+905348627027">+90 534 862 70 27</a>
+            
+            <a href="https://www.instagram.com/astra_roket/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/company/astra-roket/home/" target="_blank" rel="noopener">LinkedIn</a>
+
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<main id="icerik">
+
+<!-- =====================================================================
+     BÖLÜM 2 — KAPAK / HERO
+     ---------------------------------------------------------------------
+     * KAPAK GÖRSELİ: aşağıdaki <picture> bloğu. Değiştirmek için
+       images/ klasörüne yeni dosyayı koyup src/srcset yolunu güncelleyin.
+       width ve height değerlerini de görselin gerçek ölçüsüyle yazın
+       (sayfanın yüklenirken zıplamaması için gereklidir).
+     * Sayfadaki TEK <h1> burasıdır; başka yerde h1 kullanmayın.
+     ===================================================================== -->
+<section class="kapak" id="kapak" aria-labelledby="kapak-baslik">
+  <div class="kapsayici kapak-ic">
+
+    <div>
+      <p class="ustyazi">Gaziantep · Orta İrtifa Roket Takımı</p>
+
+      <!-- ANA BAŞLIK (H1) -->
+      <h1 id="kapak-baslik">Gökyüzünde<br>yazılmamış bir<br>hikâye var.</h1>
+
+      <!-- GİRİŞ METNİ -->
+      <p class="giris">
+        2021 yılında Teknogaraj bünyesinde kurulan, lise ve üniversite öğrencilerinden oluşan bir roket takımıyız.
+        TEKNOFEST Roket Yarışması’nda Gaziantep’i temsil ediyor, 2027 A2 Orta İrtifa kategorisine hazırlanıyoruz.
+      </p>
+
+      <div class="butonlar">
+        <a class="btn" href="#hakkimizda">Bizi tanıyın</a>
+        <a class="btn btn-bos" href="#roketimiz">Roketimiz</a>
+        <a class="btn btn-bos" href="#iletisim">İletişime geçin</a>
+      </div>
+    </div>
+
+    <!-- KAPAK GÖRSELİ / LOGO — üst bölümde olduğu için lazy loading YOK -->
+    <div class="logo-cerceve">
+      <picture>
+        <source srcset="images/logo.webp" type="image/webp">
+        <img src="images/logo.png"
+             alt="Astra Roket Takımı logosu"
+             width="1024" height="1024"
+             decoding="async" fetchpriority="high">
+      </picture>
+    </div>
+
+  </div>
+
+  <!-- KAPAK ALTI KÜÇÜK BİLGİLER -->
+  <div class="kapsayici">
+    <h2 class="gizli-baslik">Takım künyesi</h2>
+    <ul class="rakamlar">
+      <li class="rakam"><b>2021</b><span>Teknogaraj bünyesinde kuruluşumuz</span></li>
+      <li class="rakam"><b>A2 Orta İrtifa</b><span>2027 TEKNOFEST hedefimiz</span></li>
+      <li class="rakam"><b>Lise + Üniversite</b><span>Takım yapımız</span></li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 3 — BİZ KİMİZ / HAKKIMIZDA
+     Her paragraf bir <p>...</p> satırıdır; yeni paragraf eklemek için
+     araya bir <p>Yazı</p> satırı ekleyin.
+     ===================================================================== -->
+<section class="bolum" id="hakkimizda" aria-labelledby="hakkimizda-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="hakkimizda-baslik">Biz kimiz?</h2>
+    <p class="bolum-alt">Astra Roket Takımı</p>
+
+    <div class="ikili">
+      <div class="metin">
+        <p>Astra Roket Takımı, 2021 yılında Teknogaraj bünyesinde kuruldu. Kuruluşundan bu yana milli teknoloji hamlesine katkı sağlayacak projeler geliştirmeyi hedefliyoruz.</p>
+        <p>2023’te Astra olarak TEKNOFEST Roket Yarışması Lise kategorisinde Türkiye ikincisi olduk. Aynı yıl Çağdaş Roket Takımı Yüksek İrtifa kategorisinde Türkiye birinciliğini elde etti. Astra, 2024’te Orta İrtifa kategorisinde finalist oldu.</p>
+        <p>2025’te Çağdaş Roket Takımı ile birleşerek Çağdaş Astra Roket Takımı adıyla Zorlu Görev kategorisinde yarıştık. ÖTR ve KTR aşamalarını birincilikle tamamlayıp atış alanına katılmaya hak kazandık; yarışı Türkiye dördüncüsü olarak bitirip “Örnek Takım” ödülünü aldık.</p>
+      </div>
+      <div class="metin">
+        <p>Takımımız lise ve üniversite düzeyindeki üyelerden oluşuyor. Aldığımız eğitimler ve ekip içi deneyim paylaşımıyla kendimizi geliştiriyor, bilim ve teknoloji alanında yeni hedeflere hazırlanıyoruz.</p>
+        <p>2027 TEKNOFEST Roket Yarışması’nda A2 Orta İrtifa kategorisinde yarışmaya hazırlanıyoruz. Çalışmalarımız roket tasarımı, aviyonik sistemler, yapısal analiz, kurtarma sistemleri ve görev gereksinimlerini kapsıyor.</p>
+        <p>Bilimsel görevimiz “Yapısal Parçaların İvme Tepkisi Deneyi”. Strain Gauge sensörleriyle roket yapısındaki farklı malzemelerin zorlanma verilerini ölçmeyi ve değerlendirmeyi hedefliyoruz.</p>
+        <p class="vurgu">Astra Roket Takımı olarak deneyimimizi yeni hedeflerle buluşturuyoruz.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 4 — GEÇMİŞİMİZ / BAŞARILAR
+     Yeni yıl eklemek için en alttaki örnek <li> bloğunu kopyalayın.
+     ===================================================================== -->
+<section class="bolum" id="gecmis" aria-labelledby="gecmis-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="gecmis-baslik">Nereden geliyoruz?</h2>
+    <p class="bolum-alt">Takım üyelerimizin bugüne kadar içinde yer aldığı süreçler</p>
+
+    <ul class="zaman">
+
+      <li>
+        <h3><span class="yil">2021</span>Astra Roket Takımı kuruldu</h3>
+        <p>Astra Roket Takımı, Teknogaraj bünyesinde kurularak roket ve havacılık teknolojileri alanındaki çalışmalarına başladı.</p>
+      </li>
+
+      <li>
+        <h3><span class="yil">2023</span>Türkiye dereceleri</h3>
+        <p>
+          Astra Roket Takımı, Lise kategorisinde Türkiye ikincisi oldu. Aynı yıl Çağdaş Roket Takımı,
+          Yüksek İrtifa kategorisinde Türkiye birinciliğini elde etti. Bu dereceler Gaziantep’in roket alanındaki
+          ilk başarıları olarak kayda geçti.
+        </p>
+      </li>
+
+      <li>
+        <h3><span class="yil">2024</span>Orta İrtifa finali</h3>
+        <p>
+          Astra Roket Takımı, TEKNOFEST Roket Yarışması Orta İrtifa kategorisinde finalist oldu.
+        </p>
+      </li>
+
+      <li>
+        <h3><span class="yil">2025</span>Çağdaş Astra ile Zorlu Görev</h3>
+        <p>
+          Astra ve Çağdaş takımları birleşerek Çağdaş Astra Roket Takımı adıyla Zorlu Görev kategorisinde yarıştı.
+          ÖTR ve KTR aşamaları birincilikle tamamlandı; takım finale kalan üç ekip arasında yer aldı.
+          Aksaray Hisar Atış Alanı’ndaki yarışma Türkiye dördüncülüğü ve “Örnek Takım” ödülüyle tamamlandı.
+        </p>
+      </li>
+
+      <li>
+        <h3><span class="yil">2026</span>Yeni hedefler, yeni bir başlangıç</h3>
+        <p>
+          Geçmişten gelen deneyimimizi yeni fikirler ve taze bir heyecanla buluşturuyoruz.
+          2027 TEKNOFEST A2 Orta İrtifa kategorisine yeni hedefler ve umutlarla hazırlanıyoruz.
+        </p>
+      </li>
+
+      <!-- YENİ YIL EKLEMEK İÇİN ŞU BLOĞU KOPYALAYIN:
+      <li>
+        <h3><span class="yil">2027</span>Başlık buraya</h3>
+        <p>Açıklama buraya.</p>
+      </li>
+      -->
+
+    </ul>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 5 — ROKETİMİZ
+     ---------------------------------------------------------------------
+     Üst menüdeki "Roketimiz" butonu bu üç başlığa yönlendirir:
+       #mekanik · #elektronik · #faydali-yuk
+     Teknik veriler kesinleştikçe kart içlerini güncelleyin.
+     ===================================================================== -->
+<section class="bolum" id="roketimiz" aria-labelledby="roketimiz-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="roketimiz-baslik">Roketimiz</h2>
+    <p class="bolum-alt">Üç ana ekip, tek bir araç · 2027 A2 Orta İrtifa</p>
+
+    <!-- ROKET GÖRSELİ — hazır olduğunda buraya ekleyin. Örnek:
+         <img src="images/roket.webp" alt="Roket kesit görseli"
+              width="520" height="900" loading="lazy" decoding="async"
+              style="margin:0 auto 40px;">
+    -->
+
+    <div class="kartlar">
+      <article class="kart" id="mekanik">
+        <h3>Mekanik</h3>
+        <p>Roket borusu, burun konisi ve roket içindeki bileşenler mekanik tasarımın temel parçalarıdır. Tasarımda karbon fiber, fiberglass, alüminyum ve çelik gibi malzemeler kullanılır.</p>
+        <ul>
+          <li>Roket borusu ve burun konisi</li>
+          <li>İç bileşenlerin yerleşimi</li>
+          <li>Karbon fiber ve fiberglass</li>
+          <li>Alüminyum ve çelik</li>
+        </ul>
+      </article>
+      <article class="kart" id="elektronik">
+        <h3>Elektronik / Aviyonik</h3>
+        <p>Aviyonik sistemler ticari olarak tedarik edilen bir uçuş kontrol bilgisayarı ile Astra elektronik ekibinin tasarlayıp ürettiği özgün bilgisayardan oluşur.</p>
+        <ul>
+          <li>Ticari uçuş kontrol bilgisayarı</li>
+          <li>Astra tarafından tasarlanıp üretilen özgün sistem</li>
+          <li>Uçuş kontrol ve görev verilerinin izlenmesi</li>
+        </ul>
+      </article>
+      <article class="kart" id="faydali-yuk">
+        <h3>Faydalı Yük &amp; Görev</h3>
+        <p>Bilimsel görevimiz “Yapısal Parçaların İvme Tepkisi Deneyi”. Karbon fiber, fiberglass, alüminyum ve pirinç parçalardaki zorlanma Strain Gauge sensörleriyle ölçülüp kaydedilecek.</p>
+        <ul>
+          <li>Malzeme deformasyonlarının ölçülmesi</li>
+          <li>Strain Gauge ile zorlanma verilerinin kaydı</li>
+          <li>Yer istasyonuna veri aktarımı ve grafikle görselleştirme</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 6 — MODEL ROKETÇİLİK NEDİR?
+     ===================================================================== -->
+<section class="bolum" id="roketcilik" aria-labelledby="roketcilik-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="roketcilik-baslik">Model roketçilik nedir?</h2>
+    <p class="bolum-alt">Kısa bir giriş</p>
+
+    <div class="ikili">
+      <div class="metin">
+        <p>
+          Model roketçilik; belirli güvenlik kuralları çerçevesinde tasarlanan, üretilen ve
+          uçurulan küçük ölçekli roketlerle uğraşma işidir. Amaç bir roketi havaya göndermek
+          kadar, onu sağlam bir şekilde geri getirebilmektir. Bir uçuşun başarılı sayılması için
+          roketin hedeflenen irtifaya çıkması, kurtarma sisteminin doğru anda açılması ve aracın
+          hasarsız inmesi gerekir.
+        </p>
+        <p>
+          Bir roket temel olarak burun konisi, gövde, kanatçıklar, motor ve kurtarma
+          sisteminden oluşur. Motor, yakıtın yanmasıyla oluşan gazı hızla dışarı atar; bu itki
+          roketi yukarı taşır. Kanatçıklar aracı rüzgârda dengede tutar. Burun konisinin şekli
+          ise hava direncini belirler.
+        </p>
+        <p>
+          Bir roketin stabil uçabilmesi için ağırlık merkezinin, basınç merkezinin önünde
+          olması gerekir. Bu denge sağlanmazsa roket havada takla atar. Bu yüzden tasarımın en
+          başından itibaren her parçanın ağırlığı ve yeri hesaplanır.
+        </p>
+      </div>
+
+      <div class="metin">
+        <p>
+          Kurtarma sistemi genellikle iki aşamalıdır: roket tepe noktasına ulaştığında küçük bir
+          sürükleme paraşütü açılır ve araç kontrollü şekilde alçalır; belirli bir irtifada ise
+          ana paraşüt açılarak iniş hızı güvenli seviyeye düşürülür. Bu komutları veren sistem,
+          aviyonik dediğimiz uçuş kontrol elektroniğidir.
+        </p>
+        <p>
+          Türkiye'de bu alandaki en kapsamlı organizasyon TEKNOFEST Roket Yarışması'dır. Takımlar
+          Alçak, Orta ve Yüksek İrtifa ile Zorlu Görev gibi kategorilerde yarışır. Süreç sadece
+          atış gününden ibaret değildir: ön tasarım raporu, kritik tasarım raporu ve teknik
+          kontroller geçilmeden atış alanına çıkılamaz.
+        </p>
+        <p>
+          Orta İrtifa kategorisinde hedef, roketi belirlenen irtifaya olabildiğince yakın
+          çıkarmaktır. Ne altında kalmak ne de üstüne çıkmak istenir; puanı belirleyen şey
+          isabettir. Bu da tasarımın baştan sona doğru hesaplanmasını gerektirir.
+        </p>
+        <p class="kart-not">
+          Kaynak: ROKETSAN "Temel Roketçilik Eğitimi" kitabı ve yarışma şartnameleri.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 7 — VİDEO ALANI
+     ---------------------------------------------------------------------
+     VİDEO EKLEMEK İÇİN: aşağıdaki <div class="video-bos">...</div>
+     bloğunu SİLİN ve yerine şunlardan birini yapıştırın:
+
+     1) YouTube:
+        <iframe src="https://www.youtube.com/embed/VIDEO_KODU"
+                title="Astra Roket Takımı tanıtım videosu"
+                loading="lazy" allowfullscreen
+                allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+
+     2) Kendi mp4 dosyanız:
+        <video src="images/video.mp4" controls preload="none"
+               poster="images/video-kapak.jpg"></video>
+     ===================================================================== -->
+<section class="bolum" id="video" aria-labelledby="video-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="video-baslik">Takım videomuz</h2>
+    <p class="bolum-alt">Çalışmalarımızdan ve uçuşlarımızdan kesitler</p>
+
+    <div class="video-kutu">
+      <!-- VİDEO BURAYA -->
+      <p class="video-bos">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <rect x="2.5" y="5" width="19" height="14" rx="2" stroke="#b3abab" stroke-width="1.2"/>
+          <path d="M10 9.3v5.4l4.6-2.7z" fill="#7b0126" stroke="#b3abab" stroke-width="1"/>
+        </svg>
+        Video yakında burada olacak.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 8 — SPONSORLUK
+     ---------------------------------------------------------------------
+     Paket içerikleri bilerek boş bırakıldı. Kesinleşince aşağıdaki
+     <p> satırlarının içini doldurmanız yeterli.
+     ===================================================================== -->
+<section class="bolum" id="sponsorluk" aria-labelledby="sponsorluk-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="sponsorluk-baslik">Sponsorluk</h2>
+    <p class="bolum-alt">
+      Takımımıza destek veren kurum ve kuruluşlara sunduğumuz sponsorluk seçenekleri.
+    </p>
+
+    <ul class="paketler">
+
+      <li class="paket">
+        <h3>Ana Sponsorluk</h3>
+        <span class="seviye" aria-hidden="true"></span>
+        <p>100.000 TL · Takım ismiyle anılma, roket ve takım kıyafetlerinde en büyük logo, sosyal medya ve tanıtım içeriklerinde öncelikli görünürlük.</p>
+      </li>
+
+      <li class="paket">
+        <h3>Altın Sponsorluk</h3>
+        <span class="seviye" aria-hidden="true"></span>
+        <p>70.000 TL · Roket ve ekipmanlarda büyük logo, sosyal medya paylaşımları ve tanıtım videolarında görünürlük.</p>
+      </li>
+
+      <li class="paket">
+        <h3>Gümüş Sponsorluk</h3>
+        <span class="seviye" aria-hidden="true"></span>
+        <p>50.000 TL · Takım afişleri ve sunumlarında logo, sosyal medya sponsor listesinde ve etkinliklerde görünürlük.</p>
+      </li>
+
+      <li class="paket">
+        <h3>Bronz Sponsorluk</h3>
+        <span class="seviye" aria-hidden="true"></span>
+        <p>20.000 TL · Teşekkür paylaşımlarında, takım sunumlarında ve sponsor panosunda logo kullanımı.</p>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     BÖLÜM 9 — İLETİŞİM
+     ---------------------------------------------------------------------
+     Numara değiştirirken İKİ yeri güncelleyin:
+       href="tel:+905524897978"  (boşluksuz, +90 ile)
+       ve ekranda görünen yazı.
+     ===================================================================== -->
+<section class="bolum" id="iletisim" aria-labelledby="iletisim-baslik">
+  <div class="kapsayici">
+    <p class="cizgi-bordo" aria-hidden="true"></p>
+    <h2 class="bolum-baslik" id="iletisim-baslik">İletişim</h2>
+    <p class="bolum-alt">Bize doğrudan ulaşabilirsiniz</p>
+
+    <div class="iletisim-kutu">
+
+      <div class="kisi">
+        <p class="rol">Takım Kaptanı</p>
+        <h3>Eyüp Arda Soytürk</h3>
+        <a href="tel:+905524897978">+90 552 489 79 78</a>
+      </div>
+
+      <div class="kisi">
+        <p class="rol">İletişim Sorumlusu</p>
+        <h3>Gülşen Alsaç</h3>
+        <a href="tel:+905348627027">+90 534 862 70 27</a>
+      </div>
+
+    </div>
+
+    <!-- SOSYAL MEDYA -->
+    <div class="baglantilar">
+<a class="baglanti" href="https://www.instagram.com/astra_roket/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="18" height="18" rx="5" stroke="#f4f2f1" stroke-width="1.4"/>
+          <circle cx="12" cy="12" r="4" stroke="#f4f2f1" stroke-width="1.4"/>
+          <circle cx="17.2" cy="6.8" r="1.1" fill="#f4f2f1"/>
+        </svg>
+        Instagram<span class="gizli-baslik"> (yeni sekmede açılır)</span>
+      </a>
+      <a class="baglanti" href="https://www.linkedin.com/company/astra-roket/home/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="18" height="18" rx="3" stroke="#f4f2f1" stroke-width="1.4"/>
+          <path d="M7 10v7M7 7.2v.1M11 17v-4a2 2 0 0 1 4 0v4" stroke="#f4f2f1" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        LinkedIn<span class="gizli-baslik"> (yeni sekmede açılır)</span>
+      </a>
+
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================================
+     BÖLÜM 10 — ALT BİLGİ (FOOTER)
+     ===================================================================== -->
+<footer class="altbilgi">
+  <div class="kapsayici">
+    <p>Astra Roket Takımı · Teknogaraj · Gaziantep</p>
+    <p>© 2026 · Tüm hakları saklıdır.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
