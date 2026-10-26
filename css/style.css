@@ -1,35 +1,16 @@
-/* =====================================================================
-   ASTRA ROKET TAKIMI — style.css
-   ---------------------------------------------------------------------
-   İÇİNDEKİLER
-     1. Değişkenler (renk / yazı tipi)      -> :root
-     2. Genel sıfırlama ve tipografi
-     3. Yardımcı sınıflar (kapsayıcı, bölüm başlığı)
-     4. Üst çubuk (navbar) + mobil menü + açılır menüler
-     5. Kapak (hero)
-     6. Metin blokları ve zaman çizelgesi
-     7. Kartlar (Roketimiz / Roketçilik)
-     8. Video alanı
-     9. Sponsorluk paketleri
-    10. İletişim
-    11. Footer
-    12. Mobil uyum (media query)
-    13. Erişilebilirlik (focus / reduced-motion)
-   ===================================================================== */
+/* Sayfanın tüm stilleri burada. */
 
 
-/* =====================================================================
-   1. DEĞİŞKENLER — sitenin tüm renkleri buradan yönetilir
-   ===================================================================== */
+/* 1. Renkler ve yazı tipi */
 :root{
-  --bordo:        #7b0126;   /* ANA BORDO (logodan) */
-  --bordo-acik:   #c4184a;   /* Vurgu tonu */
-  --bordo-koyu:   #4d0117;   /* Kenarlık / çizgi */
-  --siyah:        #0a0a0a;   /* Sayfa arka planı */
-  --gri:          #111111;   /* KOYU GRİ (logodan) — kutu arka planı */
+  --bordo:        #7b0126;   /* Ana renk */
+  --bordo-acik:   #c4184a;   /* Vurgu rengi */
+  --bordo-koyu:   #4d0117;   /* Kenarlık rengi */
+  --siyah:        #0a0a0a;   /* Arka plan */
+  --gri:          #111111;   /* Kart arka planı */
   --gri-acik:     #1b1b1b;
-  --beyaz:        #f4f2f1;   /* Ana yazı rengi */
-  --sonuk:        #b3abab;   /* Soluk yazı — WCAG AA için açıldı */
+  --beyaz:        #f4f2f1;   /* Metin rengi */
+  --sonuk:        #b3abab;   /* İkincil metin */
   --cizgi:        rgba(255,255,255,.12);
 
   /* Yazı tipi: Times ailesi. Harici font YÜKLENMEZ (performans). */
@@ -40,9 +21,7 @@
 }
 
 
-/* =====================================================================
-   2. GENEL SIFIRLAMA VE TİPOGRAFİ
-   ===================================================================== */
+/* 2. Genel görünüm */
 *,*::before,*::after{box-sizing:border-box;}
 
 html{
@@ -80,9 +59,7 @@ a{color:inherit;}
 .atla:focus{left:8px; top:8px;}
 
 
-/* =====================================================================
-   3. YARDIMCI SINIFLAR
-   ===================================================================== */
+/* 3. YARDIMCI SINIFLAR */
 .kapsayici{width:100%; max-width:var(--en); margin:0 auto; padding:0 24px;}
 
 .bolum{padding:96px 0; border-top:1px solid var(--cizgi);}
@@ -97,9 +74,7 @@ a{color:inherit;}
 }
 
 
-/* =====================================================================
-   4. ÜST ÇUBUK (NAVBAR)
-   ===================================================================== */
+/* 4. Üst menü */
 .ustcubuk{
   position:sticky; top:0; z-index:900;
   background:rgba(10,10,10,.94);
@@ -159,9 +134,7 @@ a{color:inherit;}
 .hamburger[aria-expanded="true"] .ikon-kapat{display:block;}
 
 
-/* =====================================================================
-   5. KAPAK (HERO)
-   ===================================================================== */
+/* 5. Kapak */
 .kapak{
   position:relative; overflow:hidden;
   background:
@@ -201,9 +174,7 @@ a{color:inherit;}
 .rakam span{font-size:15px; color:var(--sonuk);}
 
 
-/* =====================================================================
-   6. METİN BLOKLARI VE ZAMAN ÇİZELGESİ
-   ===================================================================== */
+/* 6. Metinler ve geçmiş */
 .ikili{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
 .metin p{margin:0 0 20px; max-width:66ch;}
 
@@ -218,9 +189,7 @@ a{color:inherit;}
 .zaman p{margin:0; color:var(--sonuk); font-size:17px; max-width:60ch;}
 
 
-/* =====================================================================
-   7. KARTLAR
-   ===================================================================== */
+/* 7. Kartlar */
 .kartlar{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
 .kart{background:var(--gri); border:1px solid var(--cizgi); border-top:3px solid var(--bordo); padding:30px 26px;}
 .kart h3{margin:0 0 12px; font-size:24px; font-weight:400;}
@@ -230,9 +199,7 @@ a{color:inherit;}
 .kart-not{font-size:14px; color:#8a8181; font-style:italic; margin-top:16px;}
 
 
-/* =====================================================================
-   8. VİDEO ALANI
-   ===================================================================== */
+/* 8. Video */
 .video-kutu{
   position:relative; width:100%; aspect-ratio:16/9; background:var(--gri);
   border:1px solid var(--bordo-koyu);
@@ -244,9 +211,7 @@ a{color:inherit;}
 .video-bos svg{width:52px; height:52px; margin:0 auto 14px; display:block; opacity:.8;}
 
 
-/* =====================================================================
-   9. SPONSORLUK
-   ===================================================================== */
+/* 9. Sponsorluk */
 .paketler{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; list-style:none; margin:0; padding:0;}
 .paket{background:var(--gri); border:1px solid var(--cizgi); padding:26px 22px; min-height:230px;}
 .paket h3{margin:0 0 4px; font-size:22px; font-weight:400;}
@@ -255,9 +220,7 @@ a{color:inherit;}
 .sponsor-not{margin-top:34px; color:var(--sonuk);}
 
 
-/* =====================================================================
-   10. İLETİŞİM
-   ===================================================================== */
+/* 10. İletişim */
 .iletisim-kutu{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
 .kisi{background:var(--gri); border:1px solid var(--cizgi); padding:26px;}
 .kisi .rol{font-size:13px; letter-spacing:3px; color:var(--bordo-acik); text-transform:uppercase;}
@@ -276,21 +239,14 @@ a{color:inherit;}
 .baglanti svg{width:18px; height:18px; flex-shrink:0;}
 
 
-/* =====================================================================
-   11. FOOTER
-   ===================================================================== */
+/* 11. Alt bilgi */
 .altbilgi{border-top:1px solid var(--bordo-koyu); background:#070707; padding:40px 0; text-align:center;}
 .altbilgi p{margin:6px 0; color:var(--sonuk); font-size:15px;}
 .altbilgi a{color:var(--sonuk);}
 .altbilgi a:hover{color:var(--beyaz);}
 
 
-/* =====================================================================
-   12. MOBİL UYUM
-   ---------------------------------------------------------------------
-   900px altı: tek sütun düzen + açılır mobil menü
-   520px altı: daha küçük tipografi
-   ===================================================================== */
+/* 12. Küçük ekranlar */
 @media (max-width:900px){
   .kapak-ic{grid-template-columns:1fr; gap:34px;}
   .logo-cerceve{max-width:250px; margin:0 auto;}
@@ -334,10 +290,7 @@ a{color:inherit;}
 }
 
 
-/* =====================================================================
-   13. HAREKET AZALTMA TERCİHİ
-   İşletim sisteminde "hareketi azalt" açıksa animasyonlar durur.
-   ===================================================================== */
+/* 13. Hareketi azaltma ayarı */
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{
     animation-duration:.01ms !important;
