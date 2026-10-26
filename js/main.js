@@ -1,19 +1,19 @@
-/* Mobil menü ve açılır menü davranışları. */
+
 (function () {
   'use strict';
 
-  /* Küçük yardımcılar */
+  
   var sec  = function (s, k) { return (k || document).querySelector(s); };
   var hepsi = function (s, k) { return Array.prototype.slice.call((k || document).querySelectorAll(s)); };
 
   var ustcubuk   = sec('.ustcubuk');
-  if (!ustcubuk) { return; }                 // Sayfada menü yoksa devam etme
+  if (!ustcubuk) { return; }
 
   var menu       = sec('#ana-menu', ustcubuk);
   var hamburger  = sec('#hamburger', ustcubuk);
   var acilirBtnlar = hepsi('.acilir-buton', ustcubuk);
 
-  /* 1. Mobil menü */
+  
   function menuyuKapat() {
     if (!menu || !hamburger) { return; }
     menu.classList.remove('acik');
@@ -30,7 +30,7 @@
     hamburger.addEventListener('click', menuyuAcKapat);
   }
 
-  /* 2. Açılır menüler */
+  
   function tumAcilirlariKapat(haric) {
     acilirBtnlar.forEach(function (btn) {
       if (btn === haric) { return; }
@@ -42,9 +42,9 @@
 
   acilirBtnlar.forEach(function (btn) {
     var kutu = document.getElementById(btn.getAttribute('aria-controls'));
-    if (!kutu) { return; }                   // Açılır alan yoksa bu düğmeyi atla
+    if (!kutu) { return; }
 
-    /* Düğmeye basılınca açılır alanı değiştir */
+    
     btn.addEventListener('click', function (e) {
       e.stopPropagation();
       var acikMi = kutu.classList.contains('acik');
@@ -53,7 +53,7 @@
       btn.setAttribute('aria-expanded', !acikMi ? 'true' : 'false');
     });
 
-    /* Aşağı okla ilk bağlantıya geç */
+    
     btn.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowDown') {
         e.preventDefault();
@@ -65,7 +65,7 @@
       }
     });
 
-    /* Menüden çıkınca açılır alanı kapat */
+    
     kutu.addEventListener('focusout', function () {
       window.setTimeout(function () {
         if (!kutu.contains(document.activeElement) && document.activeElement !== btn) {
@@ -76,13 +76,13 @@
     });
   });
 
-  /* Menü dışına tıklanınca açık alanları kapat */
+  
   document.addEventListener('click', function (e) {
     if (ustcubuk.contains(e.target)) { return; }
     tumAcilirlariKapat(null);
   });
 
-  /* Escape ile menüyü kapat ve odağı geri getir */
+  
   document.addEventListener('keydown', function (e) {
     if (e.key !== 'Escape') { return; }
 
@@ -92,7 +92,7 @@
 
     if (acikBtn) {
       tumAcilirlariKapat(null);
-      acikBtn.focus();                       // Odağı düğmeye geri getir
+      acikBtn.focus();
       return;
     }
 
@@ -102,7 +102,7 @@
     }
   });
 
-  /* 3. Bağlantı seçilince menüyü kapat */
+  
   if (menu) {
     hepsi('a', menu).forEach(function (a) {
       a.addEventListener('click', function () {
@@ -112,12 +112,12 @@
     });
   }
 
-  /* Geniş ekrana geçince mobil menüyü kapat */
+  
   var genis = window.matchMedia('(min-width: 901px)');
   var sifirla = function (mq) { if (mq.matches) { menuyuKapat(); } };
   if (genis.addEventListener) {
     genis.addEventListener('change', sifirla);
   } else if (genis.addListener) {
-    genis.addListener(sifirla);              // Eski tarayıcılarda da çalışsın
+    genis.addListener(sifirla);
   }
 })();

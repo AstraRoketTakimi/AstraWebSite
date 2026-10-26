@@ -1,32 +1,32 @@
-/* Sayfanın tüm stilleri burada. */
 
 
-/* 1. Renkler ve yazı tipi */
+
+
 :root{
-  --bordo:        #7b0126;   /* Ana renk */
-  --bordo-acik:   #c4184a;   /* Vurgu rengi */
-  --bordo-koyu:   #4d0117;   /* Kenarlık rengi */
-  --siyah:        #0a0a0a;   /* Arka plan */
-  --gri:          #111111;   /* Kart arka planı */
+  --bordo:        #7b0126;   
+  --bordo-acik:   #c4184a;   
+  --bordo-koyu:   #4d0117;   
+  --siyah:        #0a0a0a;   
+  --gri:          #111111;   
   --gri-acik:     #1b1b1b;
-  --beyaz:        #f4f2f1;   /* Metin rengi */
-  --sonuk:        #b3abab;   /* İkincil metin */
+  --beyaz:        #f4f2f1;   
+  --sonuk:        #b3abab;   
   --cizgi:        rgba(255,255,255,.12);
 
-  /* Yazı tipi: Times ailesi. Harici font YÜKLENMEZ (performans). */
+  
   --font: "Times New Roman", "Liberation Serif", Times, Georgia, serif;
 
-  --en: 1180px;              /* İçerik genişliği */
-  --ustcubuk-h: 78px;        /* Navbar yüksekliği (scroll-padding için) */
+  --en: 1180px;              
+  --ustcubuk-h: 78px;        
 }
 
 
-/* 2. Genel görünüm */
+
 *,*::before,*::after{box-sizing:border-box;}
 
 html{
   scroll-behavior:smooth;
-  /* Sticky navbarın başlıkları kapatmaması için */
+  
   scroll-padding-top:calc(var(--ustcubuk-h) + env(safe-area-inset-top, 0px) + 10px);
   -webkit-text-size-adjust:100%;
 }
@@ -38,7 +38,7 @@ body{
   font-family:var(--font);
   font-size:18px;
   line-height:1.75;
-  /* Mobilde yatay kaymayı engeller */
+  
   overflow-x:hidden;
   padding-top:env(safe-area-inset-top, 0px);
   padding-bottom:env(safe-area-inset-bottom, 0px);
@@ -48,10 +48,10 @@ body{
 img{max-width:100%; height:auto; display:block;}
 a{color:inherit;}
 
-/* Klavye kullanıcıları için görünür odak halkası (fare ile görünmez) */
+
 :focus-visible{outline:2px solid var(--bordo-acik); outline-offset:3px;}
 
-/* Klavye ile TAB'a basınca çıkan "içeriğe atla" bağlantısı */
+
 .atla{
   position:absolute; left:-9999px; top:0; z-index:1000;
   background:var(--bordo); color:#fff; padding:12px 20px; text-decoration:none;
@@ -59,7 +59,7 @@ a{color:inherit;}
 .atla:focus{left:8px; top:8px;}
 
 
-/* 3. YARDIMCI SINIFLAR */
+
 .kapsayici{width:100%; max-width:var(--en); margin:0 auto; padding:0 24px;}
 
 .bolum{padding:96px 0; border-top:1px solid var(--cizgi);}
@@ -67,14 +67,14 @@ a{color:inherit;}
 .bolum-alt{color:var(--sonuk); font-style:italic; margin:0 0 42px; font-size:17px;}
 .cizgi-bordo{width:70px; height:3px; background:var(--bordo); margin:0 0 28px;}
 
-/* Ekran okuyucuya okunur, gözle görünmez metin */
+
 .gizli-baslik{
   position:absolute; width:1px; height:1px; padding:0; margin:-1px;
   overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;
 }
 
 
-/* 4. Üst menü */
+
 .ustcubuk{
   position:sticky; top:0; z-index:900;
   background:rgba(10,10,10,.94);
@@ -88,13 +88,13 @@ a{color:inherit;}
   display:flex; align-items:center; justify-content:space-between; gap:18px;
 }
 
-/* Sol: roket ikonu + takım adı */
+
 .marka{display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0;}
 .marka-logo{width:38px; height:38px; object-fit:contain; border-radius:4px; flex-shrink:0;}
 .marka-yazi{font-size:15px; letter-spacing:2.5px; text-transform:uppercase; line-height:1.2;}
 .marka-yazi span{display:block; font-size:10.5px; letter-spacing:4px; color:var(--sonuk);}
 
-/* Menü */
+
 .menu{display:flex; align-items:center; gap:4px; list-style:none; margin:0; padding:0;}
 .menu > li{position:relative;}
 .menu a,
@@ -107,7 +107,7 @@ a{color:inherit;}
 .menu a:hover,
 .menu button:hover{color:#fff; border-bottom-color:var(--bordo);}
 
-/* Açılır alt menü (Roketimiz / İletişim) */
+
 .acilir{
   position:absolute; top:calc(100% + 6px); left:0; min-width:250px;
   background:var(--gri); border:1px solid var(--bordo-koyu);
@@ -120,13 +120,13 @@ a{color:inherit;}
 .acilir .bilgi{padding:9px 18px 2px; font-size:14.5px; color:var(--sonuk); line-height:1.5;}
 .acilir .bilgi b{color:var(--beyaz); font-size:15.5px; display:block; font-weight:400;}
 
-/* Mobil menü butonu — küçük ekranda görünür */
+
 .hamburger{
   display:none; background:none; border:1px solid var(--cizgi); color:#fff;
   font-family:var(--font); font-size:18px; line-height:1; padding:10px 13px; cursor:pointer;
 }
 .hamburger:hover{border-color:var(--bordo);}
-/* Açıkken ☰ yerine ✕ görünür */
+
 .hamburger .ikon-ac,
 .hamburger .ikon-kapat{display:block;}
 .hamburger .ikon-kapat{display:none;}
@@ -134,7 +134,7 @@ a{color:inherit;}
 .hamburger[aria-expanded="true"] .ikon-kapat{display:block;}
 
 
-/* 5. Kapak */
+
 .kapak{
   position:relative; overflow:hidden;
   background:
@@ -142,7 +142,7 @@ a{color:inherit;}
     linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
   padding:86px 0 96px;
 }
-/* Arka plandaki ince dikey çizgiler (rampa hissi) */
+
 .kapak::after{
   content:""; position:absolute; inset:0; pointer-events:none;
   background:repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 110px);
@@ -153,10 +153,10 @@ a{color:inherit;}
 .kapak .giris{font-size:19px; color:#ddd6d6; max-width:640px; margin:0 0 34px;}
 
 .logo-cerceve{border:1px solid var(--bordo-koyu); padding:16px; background:rgba(0,0,0,.35);}
-/* Görsel yüklenmeden yerini ayırır -> layout shift (CLS) olmaz */
+
 .logo-cerceve img{aspect-ratio:1/1; width:100%;}
 
-/* Butonlar */
+
 .butonlar{display:flex; flex-wrap:wrap; gap:14px;}
 .btn{
   display:inline-block; text-decoration:none; font-family:var(--font); font-size:16.5px;
@@ -167,14 +167,14 @@ a{color:inherit;}
 .btn-bos{background:transparent; color:var(--beyaz); border-color:rgba(255,255,255,.35);}
 .btn-bos:hover{background:rgba(255,255,255,.08); border-color:#fff;}
 
-/* Kapak altı rakam kutuları */
+
 .rakamlar{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--cizgi); margin-top:64px; list-style:none; padding:0;}
 .rakam{background:var(--siyah); padding:26px 22px;}
 .rakam b{display:block; font-size:34px; color:var(--bordo-acik); font-weight:400; line-height:1.1;}
 .rakam span{font-size:15px; color:var(--sonuk);}
 
 
-/* 6. Metinler ve geçmiş */
+
 .ikili{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
 .metin p{margin:0 0 20px; max-width:66ch;}
 
@@ -189,7 +189,7 @@ a{color:inherit;}
 .zaman p{margin:0; color:var(--sonuk); font-size:17px; max-width:60ch;}
 
 
-/* 7. Kartlar */
+
 .kartlar{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
 .kart{background:var(--gri); border:1px solid var(--cizgi); border-top:3px solid var(--bordo); padding:30px 26px;}
 .kart h3{margin:0 0 12px; font-size:24px; font-weight:400;}
@@ -199,7 +199,7 @@ a{color:inherit;}
 .kart-not{font-size:14px; color:#8a8181; font-style:italic; margin-top:16px;}
 
 
-/* 8. Video */
+
 .video-kutu{
   position:relative; width:100%; aspect-ratio:16/9; background:var(--gri);
   border:1px solid var(--bordo-koyu);
@@ -211,7 +211,7 @@ a{color:inherit;}
 .video-bos svg{width:52px; height:52px; margin:0 auto 14px; display:block; opacity:.8;}
 
 
-/* 9. Sponsorluk */
+
 .paketler{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; list-style:none; margin:0; padding:0;}
 .paket{background:var(--gri); border:1px solid var(--cizgi); padding:26px 22px; min-height:230px;}
 .paket h3{margin:0 0 4px; font-size:22px; font-weight:400;}
@@ -220,7 +220,7 @@ a{color:inherit;}
 .sponsor-not{margin-top:34px; color:var(--sonuk);}
 
 
-/* 10. İletişim */
+
 .iletisim-kutu{display:grid; grid-template-columns:repeat(2,1fr); gap:24px;}
 .kisi{background:var(--gri); border:1px solid var(--cizgi); padding:26px;}
 .kisi .rol{font-size:13px; letter-spacing:3px; color:var(--bordo-acik); text-transform:uppercase;}
@@ -232,21 +232,21 @@ a{color:inherit;}
 .baglanti{
   display:inline-flex; align-items:center; gap:10px; text-decoration:none;
   border:1px solid var(--cizgi); padding:12px 20px; font-size:16px;
-  /* Uzun e-posta adresi dar ekranda taşmasın */
+  
   max-width:100%; word-break:break-word;
 }
 .baglanti:hover{border-color:var(--bordo); background:rgba(123,1,38,.18);}
 .baglanti svg{width:18px; height:18px; flex-shrink:0;}
 
 
-/* 11. Alt bilgi */
+
 .altbilgi{border-top:1px solid var(--bordo-koyu); background:#070707; padding:40px 0; text-align:center;}
 .altbilgi p{margin:6px 0; color:var(--sonuk); font-size:15px;}
 .altbilgi a{color:var(--sonuk);}
 .altbilgi a:hover{color:var(--beyaz);}
 
 
-/* 12. Küçük ekranlar */
+
 @media (max-width:900px){
   .kapak-ic{grid-template-columns:1fr; gap:34px;}
   .logo-cerceve{max-width:250px; margin:0 auto;}
@@ -282,7 +282,7 @@ a{color:inherit;}
   .baglanti{width:100%;}
 }
 
-/* 360px ve altı çok dar ekranlar */
+
 @media (max-width:360px){
   .kapsayici{padding:0 14px;}
   .ustcubuk-ic{padding:0 14px;}
@@ -290,7 +290,7 @@ a{color:inherit;}
 }
 
 
-/* 13. Hareketi azaltma ayarı */
+
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{
     animation-duration:.01ms !important;
@@ -301,7 +301,7 @@ a{color:inherit;}
   html{scroll-behavior:auto;}
 }
 
-/* Yazıcı çıktısı için sade görünüm */
+
 @media print{
   .ustcubuk,.video-kutu{display:none;}
   body{background:#fff; color:#000;}
