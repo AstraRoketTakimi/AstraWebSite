@@ -90,7 +90,7 @@ a{color:inherit;}
 
 
 .marka{display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0;}
-.marka-logo{width:38px; height:38px; object-fit:contain; border-radius:4px; flex-shrink:0;}
+.marka-logo{height:40px; width:auto; object-fit:contain; flex-shrink:0; display:block;}
 .marka-yazi{font-size:15px; letter-spacing:2.5px; text-transform:uppercase; line-height:1.2;}
 .marka-yazi span{display:block; font-size:10.5px; letter-spacing:4px; color:var(--sonuk);}
 
@@ -152,9 +152,9 @@ a{color:inherit;}
 .ustyazi{font-size:13px; letter-spacing:6px; color:var(--bordo-acik); text-transform:uppercase; margin:0 0 20px;}
 .kapak .giris{font-size:19px; color:#ddd6d6; max-width:640px; margin:0 0 34px;}
 
-.logo-cerceve{border:1px solid var(--bordo-koyu); padding:16px; background:rgba(0,0,0,.35);}
+.logo-cerceve{padding:0; background:none; border:0; filter:drop-shadow(0 0 40px rgba(160,10,40,.28));}
 
-.logo-cerceve img{aspect-ratio:1/1; width:100%;}
+.logo-cerceve img{width:100%; height:auto; display:block;}
 
 
 .butonlar{display:flex; flex-wrap:wrap; gap:14px;}
